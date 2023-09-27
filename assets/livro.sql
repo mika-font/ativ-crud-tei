@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 22-Set-2023 às 11:49
--- Versão do servidor: 8.0.31
--- versão do PHP: 8.0.26
+-- Host: 127.0.0.1
+-- Tempo de geração: 27-Set-2023 às 22:17
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,28 +27,35 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `livro`
 --
 
-DROP TABLE IF EXISTS `livro`;
-CREATE TABLE IF NOT EXISTS `livro` (
-  `id_livro` int NOT NULL AUTO_INCREMENT,
-  `id_autor` int NOT NULL,
-  `titulo` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `autor` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `sinopse` text COLLATE utf8mb4_general_ci NOT NULL,
+CREATE TABLE `livro` (
+  `id_livro` int(11) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `autor` varchar(100) NOT NULL,
+  `sinopse` text NOT NULL,
   `valor` decimal(10,2) NOT NULL,
-  `genero` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id_livro`),
-  KEY `id_autor` (`id_autor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `genero` varchar(50) NOT NULL,
+  `imagem` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Restrições para despejos de tabelas
+-- Índices para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `livro`
+-- Índices para tabela `livro`
 --
 ALTER TABLE `livro`
-  ADD CONSTRAINT `livro_ibfk_1` FOREIGN KEY (`id_autor`) REFERENCES `autor` (`id_autor`);
+  ADD PRIMARY KEY (`id_livro`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `livro`
+--
+ALTER TABLE `livro`
+  MODIFY `id_livro` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
