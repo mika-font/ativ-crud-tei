@@ -29,6 +29,12 @@ $res = mysqli_query($conexao, $sql);
     <a href="livros.php">Livros disponiveis</a>
     <a href="autores.php">Autores recomendados</a>
     <a href="cad_livro.php">Cadastrar</a>
+<<<<<<< HEAD
+
+    <h2>Acessorios da nossa loja<h2>
+        <a href="acessorios.php">Acessorios disponiveis</a>
+=======
+>>>>>>> 7504cb434b716a4d13bea2b194d6d14eb319b59a
     <table>
         <tr>
             <th>Livros</th>
