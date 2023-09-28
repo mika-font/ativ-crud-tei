@@ -15,7 +15,7 @@
         <form action="processa_acessorio.php" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-xl-6">
-                    <label class="form-label">Nome</label>
+                    <label class="form-label">Nome do Acessório</label>
                     <input class="form-control" type="text" name="nome" required>
                 </div>
                 <div class="col-xl-6">
