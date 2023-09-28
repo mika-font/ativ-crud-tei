@@ -19,7 +19,7 @@ if(isset($_POST['cadastrar'])){
     move_uploaded_file($tmp_name_imagem, $diretorio . $newname_img);
     $arquivo = $diretorio . $newname_img;
 
-    $sql = "INSERT INTO livro VALUE ('$titulo', '$autor', '$sinopse', '$valor', '$genero', '$arquivo')";
+    $sql = "INSERT INTO livro (titulo, autor, sinopse, valor, genero, imagem) VALUE ('$titulo', '$autor', '$sinopse', '$valor', '$genero', '$arquivo')";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
         header("Location: index.php?msg=1");

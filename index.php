@@ -20,27 +20,22 @@ $res = mysqli_query($conexao, $sql);
 
     </header>
     <main>
-
+        <h1>Nossos Livros</h1>
+        <a href="livros.php">Livros disponiveis</a>
+        <a href="autores.php">Autores recomendados</a>
+        <a href="cad_livro.php">Cadastrar</a>
+        <h2>Acessorios da nossa loja<h2>
+            <a href="acessorios.php">Acessorios disponiveis</a>
+        <table>
+            <tr>
+                <th>Livros</th>
+                <th>Autor</th>
+            </tr>
+        </table>
     </main>
     <footer>
 
     </footer>
-    <h1>Nossos Livros</h1>
-    <a href="livros.php">Livros disponiveis</a>
-    <a href="autores.php">Autores recomendados</a>
-    <a href="cad_livro.php">Cadastrar</a>
-<<<<<<< HEAD
-
-    <h2>Acessorios da nossa loja<h2>
-        <a href="acessorios.php">Acessorios disponiveis</a>
-=======
->>>>>>> 7504cb434b716a4d13bea2b194d6d14eb319b59a
-    <table>
-        <tr>
-            <th>Livros</th>
-            <th>Autor</th>
-        </tr>
-    </table>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
