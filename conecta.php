@@ -13,4 +13,3 @@ function conectar(){
         die();
     }
 }
-
