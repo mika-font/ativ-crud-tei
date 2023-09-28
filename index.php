@@ -1,8 +1,12 @@
 <?php
 include("conecta.php");
 $conexao = conectar();
-$sql= "SELECT * FROM livro";
+$sql = "SELECT * FROM livro";
 $res = mysqli_query($conexao, $sql);
+
+$sql2 = "SELECT * FROM acessorio";
+$resultado = mysqli_query($conexao, $sql2);
+$acessorio = mysqli_fetch_assoc($resultado);
 ?>
 
 <!DOCTYPE html>
@@ -17,21 +21,46 @@ $res = mysqli_query($conexao, $sql);
 </head>
 <body>
     <header>
-
+        <a href="cad_livro.php">Cadastrar Livros</a>
+        <a href="cad_acessorio.php">Cadastrar Acessórios</a>
     </header>
-    <main>
-        <h1>Nossos Livros</h1>
-        <a href="livros.php">Livros disponiveis</a>
-        <a href="autores.php">Autores recomendados</a>
-        <a href="cad_livro.php">Cadastrar</a>
-        <h2>Acessorios da nossa loja<h2>
-            <a href="acessorios.php">Acessorios disponiveis</a>
-        <table>
-            <tr>
-                <th>Livros</th>
-                <th>Autor</th>
-            </tr>
-        </table>
+    <main class="container pt-3">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="text-center">
+                    <h1>Catálogo da MilkShakespeare</h1>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="text-center">
+                    <h3>Livros</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <?php 
+        $limit = 4;
+        $count = 0;
+        while($livros = mysqli_fetch_assoc($res)):
+            $count++
+        ?>
+
+        <? if($count == $limit): ?>
+            </div>
+            <div class="pb-2"></div>
+            <div class="row">
+        <?php endif;
+            endwhile; ?>
+        <div class="row">    
+            <div class="col-xl-12">
+                <div class="text-center">
+                    <h3>Acessórios</h3>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
 
