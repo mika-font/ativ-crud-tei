@@ -3,14 +3,23 @@ include_once('conectar.php');
 $conexao = conectar();
 
 if(isset($_POST['cadastrar'])){
-    $id_livro = $_POST['id_livro'];
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $sinopse = $_POST['sinopse'];
     $valor = $_POST['valor'];
     $genero = $_POST['genero'];
 
-    $sql = "INSERT INTO livro VALUE(testando o git)";
+    $imagem = $_FILES['imagem'];
+    $name_imagem = $imagem['name'];
+    $tmp_name_imagem = $imagem['tmp_name'];
+    $diretorio = "capa_book/";
+
+    $extension_imagem = strtolower(pathinfo($name_imagem, PATHINFO_EXTENSION));
+    $newname_img = uniqid() . '.' . $extension_imagem;
+    move_uploaded_file($tmp_name_imagem, $diretorio . $newname_img);
+    $arquivo = $diretorio . $newname_img;
+
+    $sql = "INSERT INTO livro VALUE ('$titulo', '$autor', '$sinopse', '$valor', '$genero', '$arquivo')";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
         header("Location: index.php?msg=1");
@@ -24,8 +33,23 @@ if(isset($_POST['cadastrar'])){
     $sinopse = $_POST['sinopse'];
     $valor = $_POST['valor'];
     $genero = $_POST['genero'];
+
+    $sql = "SELECT (imagem) FROM livro WHERE id_livro = $id_livro";
+    $consulta = mysqli_query($conexao, $sql);
+    $dados = mysqli_fetch_assoc($consulta);
+    unlink($dados['imagem']);
+
+    $imagem = $_FILES['imagem'];
+    $name_imagem = $imagem['name'];
+    $tmp_name_imagem = $imagem['tmp_name'];
+    $diretorio = "capa_book/";
+
+    $extension_imagem = strtolower(pathinfo($name_imagem, PATHINFO_EXTENSION));
+    $newname_img = uniqid() . '.' . $extension_imagem;
+    move_uploaded_file($tmp_name_imagem, $diretorio . $newname_img);
+    $arquivo = $diretorio . $newname_img;
     
-    $sql = "UPDATE livro SET titulo='$titulo', autor='$autor', sinopse='$sinopse', valor='$valor', genero='$genero' WHERE id_livro = $id_livro";
+    $sql = "UPDATE livro SET titulo='$titulo', autor='$autor', sinopse='$sinopse', valor='$valor', genero='$genero', imagem='$arquivo' WHERE id_livro = $id_livro";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
         header("Location: index.php?msg=2");
@@ -35,6 +59,11 @@ if(isset($_POST['cadastrar'])){
 
 } else if (isset($_POST['deletar'])){
     $id_livro = $_GET['deletar'];
+    $sql1 = "SELECT (imagem) FROM livro WHERE id_livro=$id_livro";
+    $result = mysqli_query($conexao, $sql1);
+    $dados = mysqli_fetch_assoc($result);
+    unlink($dados['arquivo']);
+    
     $sql = "DELETE * FROM livro WHERE id_livro = $id_livro";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
