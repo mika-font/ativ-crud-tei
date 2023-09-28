@@ -1,5 +1,5 @@
 <?php
-include_once('conectar.php');
+include_once('conecta.php');
 $conexao = conectar();
 
 if(isset($_POST['cadastrar'])){

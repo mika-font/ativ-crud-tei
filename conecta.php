@@ -12,4 +12,9 @@ function conectar(){
         echo mysqli_connect_errno() . mysqli_connect_error();
         die();
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 7504cb434b716a4d13bea2b194d6d14eb319b59a
