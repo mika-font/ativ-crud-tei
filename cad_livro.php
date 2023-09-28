@@ -8,10 +8,24 @@
     <title>Cadastrar Livro</title>
 </head>
 <body>
-    <header>
-
+    <header class="bg-dark pb-2">
+        <div class="container p-3 mb-3 border-bottom">
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="index.php">Lista de Produtos</a></li>
+                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_livro.php">Cadastrar Livro</a></li>
+                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_acessorio.php">Cadastrar Acessório</a></li>
+            </ul>
+        </div>
     </header>
-    <main class="container">
+    <main class="container pt-3">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="text-center">
+                    <h1>Cadastrar Livro</h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
         <form action="processa_livro.php" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-xl-6">
