@@ -20,7 +20,7 @@ if(isset($_POST['cadastrar'])){
     $sql = "INSERT INTO acessorio (nome, descricao, valor, imagem) VALUE ('$nome', '$descricao', '$valor','$arquivo')";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
-        header("Location: index.php?msg=1");
+        header("Location: index.php");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
@@ -48,7 +48,7 @@ if(isset($_POST['cadastrar'])){
     $sql = "UPDATE acessorio SET nome='$nome', descricao='$descricao', valor='$valor', imagem='$arquivo' WHERE id_acessorio = $id_acessorio";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
-        header("Location: index.php?msg=2");
+        header("Location: index.php");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
@@ -63,7 +63,7 @@ if(isset($_POST['cadastrar'])){
     $sql = "DELETE FROM acessorio WHERE id_acessorio = $id_acessorio";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
-        header("Location: index.php?msg=3");
+        header("Location: index.php");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }

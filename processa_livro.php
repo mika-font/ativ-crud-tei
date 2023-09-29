@@ -22,7 +22,7 @@ if(isset($_POST['cadastrar'])){
     $sql = "INSERT INTO livro (titulo, autor, sinopse, valor, genero, imagem) VALUE ('$titulo', '$autor', '$sinopse', '$valor', '$genero', '$arquivo')";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
-        header("Location: index.php?msg=1");
+        header("Location: index.php");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
@@ -52,7 +52,7 @@ if(isset($_POST['cadastrar'])){
     $sql = "UPDATE livro SET titulo='$titulo', autor='$autor', sinopse='$sinopse', valor='$valor', genero='$genero', imagem='$arquivo' WHERE id_livro = $id_livro";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
-        header("Location: index.php?msg=2");
+        header("Location: index.php");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
