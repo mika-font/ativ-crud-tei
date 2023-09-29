@@ -152,17 +152,17 @@ function mascaraDinheiro($valor) {
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="visualizar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="visualizar_acessorio" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $livros['titulo'] ?></h1>
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $acessorios['titulo'] ?></h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p><b><?php echo $livros['autor']; ?></b></p>
-                                <p><?php echo $livros['sinopse']; ?></p>
-                                <img src="<?php echo $livros['imagem']; ?>" class="card-img object-fit-cover" height="100%">
+                                <p><b><?php echo $acessorios['autor']; ?></b></p>
+                                <p><?php echo $acessorios['sinopse']; ?></p>
+                                <img src="<?php echo $acessorios['imagem']; ?>" class="card-img object-fit-cover" height="100%">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
