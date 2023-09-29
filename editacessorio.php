@@ -1,9 +1,19 @@
 <?php
+
 include_once("conecta.php");
 $id = $_GET['editar'];
-$sql = "SELECT * FROM acessorios WHERE id=" . $id;
+$sql = "SELECT * FROM acessorio WHERE id=" . $id;
+
 $resultado = mysqli_query($conexao, $sql);
 $dados = mysqli_fetch_assoc($resultado);
+
+if (isset($_GET['deletar'])) {
+    $id = $_GET['deletar'];
+
+    $sql = "DELETE FROM contatos WHERE id=$id";
+    mysqli_query($conexao, $sql);
+    header("processa_acessorio.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -46,8 +56,8 @@ $dados = mysqli_fetch_assoc($resultado);
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="processa_acessorio.php">Acessorios</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Editar</li>
-                <li class="breadcrumb-item"><a href="index.php">Página Inícial</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Salvar edição</li>
+                <li class="breadcrumb-item"><a href="index.php">Voltar a página inícial</a></li>
             </ol>
         </nav>
 
