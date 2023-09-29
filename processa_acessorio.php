@@ -52,15 +52,15 @@ if(isset($_POST['cadastrar'])){
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
-} else if (isset($_POST['deletar'])){
+} else if (isset($_GET['deletar'])){
     $id_acessorio = $_GET['deletar'];
-    $sql1 = "SELECT (imagem) FROM acessorio WHERE id_acessorio = $id_acessorio";
+    $sql1 = "SELECT imagem FROM acessorio WHERE id_acessorio = $id_acessorio";
     $result = mysqli_query($conexao, $sql1);
     $dados = mysqli_fetch_assoc($result);
     
     unlink($dados['imagem']);
     
-    $sql = "DELETE * FROM acessorio WHERE id_acessorio = $id_acessorio";
+    $sql = "DELETE FROM acessorio WHERE id_acessorio = $id_acessorio";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
         header("Location: index.php?msg=3");

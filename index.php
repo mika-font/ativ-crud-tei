@@ -81,13 +81,13 @@ function mascaraDinheiro($valor) {
                             <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
                         <div class="card-footer text-center p-2">
-                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar">Visualizar</button>
+                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar<?php echo $livros['id_livro']?>">Visualizar</button>
                             <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro']; ?>" class="card-link btn btn-outline-success text-light">Editar</a>
-                            <button type="button" class="card-link btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarLivro">Excluir</button>
+                            <button type="button" class="card-link btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarLivro<?php echo $livros['id_livro']; ?>">Excluir</button>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="visualizar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="visualizar<?php echo $livros['id_livro']?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -106,7 +106,7 @@ function mascaraDinheiro($valor) {
                         </div>
                     </div>
                 </div>
-                <div class="modal" id="confirmarLivro" tabindex="-1">
+                <div class="modal" id="confirmarLivro<?php echo $livros['id_livro']; ?>" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -157,13 +157,13 @@ function mascaraDinheiro($valor) {
                             <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
                         <div class="card-footer text-center p-2">
-                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar_acessorio">Visualizar</button>
+                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar_acessorio<?php echo $acessorios['id_acessorio']?>">Visualizar</button>
                             <a href="edit_acessorio.php?id_acessorio=<?php echo $acessorios['id_acessorio']; ?>" class="card-link btn btn-outline-success text-light">Editar</a>
-                            <button type="button" class="card-link btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarAcessorio">Excluir</button>
+                            <button type="button" class="card-link btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarAcessorio<?php echo $acessorios['id_acessorio']; ?>">Excluir</button>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="visualizar_acessorio" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="visualizar_acessorio<?php echo $acessorios['id_acessorio']?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -181,7 +181,7 @@ function mascaraDinheiro($valor) {
                         </div>
                     </div>
                 </div>
-                <div class="modal" id="confirmarAcessorio" tabindex="-1">
+                <div class="modal" id="confirmarAcessorio<?php echo $acessorios['id_acessorio']; ?>" tabindex="-1">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

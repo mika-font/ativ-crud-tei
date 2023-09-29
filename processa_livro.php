@@ -57,18 +57,18 @@ if(isset($_POST['cadastrar'])){
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
 
-} else if (isset($_POST['deletar'])){
+} else if (isset($_GET['deletar'])){
     $id_livro = $_GET['deletar'];
-    $sql1 = "SELECT (imagem) FROM livro WHERE id_livro=$id_livro";
+    $sql1 = "SELECT imagem FROM livro WHERE id_livro = $id_livro";
     $result = mysqli_query($conexao, $sql1);
     $dados = mysqli_fetch_assoc($result);
     
-    unlink($dados['arquivo']);
+    unlink($dados['imagem']);
     
-    $sql = "DELETE * FROM livro WHERE id_livro = $id_livro";
+    $sql = "DELETE FROM livro WHERE id_livro = $id_livro";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
-        header("Location: index.php?msg=3");
+        header("Location: index.php");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
