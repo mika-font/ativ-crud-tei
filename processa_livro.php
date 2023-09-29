@@ -62,6 +62,7 @@ if(isset($_POST['cadastrar'])){
     $sql1 = "SELECT (imagem) FROM livro WHERE id_livro=$id_livro";
     $result = mysqli_query($conexao, $sql1);
     $dados = mysqli_fetch_assoc($result);
+    
     unlink($dados['arquivo']);
     
     $sql = "DELETE * FROM livro WHERE id_livro = $id_livro";
@@ -72,6 +73,4 @@ if(isset($_POST['cadastrar'])){
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
 }
-
-
 ?>
