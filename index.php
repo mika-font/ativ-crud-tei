@@ -14,10 +14,9 @@ function recortarText($texto)
     $sinopse = implode(' ', $recorte);
     return $sinopse;
 }
-//função para a variavel $valor ser exibida com , e R$
 function mascaraDinheiro($valor) {
     $valor = number_format($valor, 2, ',', '.');
-    return 'R$ ' . $valor;
+    return $valor;
 }
 
 //chamando a função
@@ -72,6 +71,8 @@ $valorFormatado = mascaraDinheiro($valor);
             while ($livros = mysqli_fetch_assoc($res)) :
                 $texto = $livros['sinopse'];
                 $sinopse = recortarText($texto);
+                $valor = $livros['valor'];
+                $valorFormatado = mascaraDinheiro($valor);
                 $count++;
             ?>
                 <div class="col-xl-3">
@@ -81,7 +82,7 @@ $valorFormatado = mascaraDinheiro($valor);
                             <h5 class="card-title"><?php echo $livros['titulo']; ?></h5>
                             <h6 class="card-text"><?php echo $livros['autor']; ?></h6>
                             <p class="card-text"><?php echo $sinopse . '...'; ?></p>
-                            <p class="card-text"><?php echo "R$ " . $livros['valor']; ?></p>
+                            <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
                         <div class="card-footer text-center p-2">
                             <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Visualizar</button>
