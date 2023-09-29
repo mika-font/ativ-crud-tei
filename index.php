@@ -77,6 +77,8 @@ function recortarText($texto)
                         </div>
                         <div class="card-footer">
                             <a href="#" class="card-link btn btn-outline-info text-light">Visualizar</a>
+                            <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro'];?>" class="card-link btn btn-outline-sucesses text-light">Editar</a>
+                            <a href="processa_livro.php?deletar=<?php echo $livros['id_livro'];?>" class="card-link btn btn-outline-danger text-light">Excluir</a>
                         </div>
                     </div>
                 </div>
