@@ -14,7 +14,8 @@ function recortarText($texto)
     $sinopse = implode(' ', $recorte);
     return $sinopse;
 }
-function mascaraDinheiro($valor) {
+function mascaraDinheiro($valor)
+{
     $valor = number_format($valor, 2, ',', '.');
     return $valor;
 }
@@ -85,13 +86,14 @@ $valorFormatado = mascaraDinheiro($valor);
                             <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
                         <div class="card-footer text-center p-2">
-                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Visualizar</button>
+                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar">Visualizar</button>
                             <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro']; ?>" class="card-link btn btn-outline-success text-light">Editar</a>
+                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Excluir</button>
                             <a href="processa_livro.php?deletar=<?php echo $livros['id_livro']; ?>" class="card-link btn btn-outline-danger text-light">Excluir</a>
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="visualizar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -100,12 +102,29 @@ $valorFormatado = mascaraDinheiro($valor);
                             </div>
                             <div class="modal-body">
                                 <p><b><?php echo $livros['autor']; ?></b></p>
-                                <p><?php echo $livros['sinopse'];?></p>
-                                <img src="<?php echo $livros['imagem'];?>" class="card-img object-fit-cover" height="100%">
+                                <p><?php echo $livros['sinopse']; ?></p>
+                                <img src="<?php echo $livros['imagem']; ?>" class="card-img object-fit-cover" height="100%">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                                 <button type="button" class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Modal body text goes here.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
