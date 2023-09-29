@@ -19,9 +19,6 @@ function mascaraDinheiro($valor)
     $valor = number_format($valor, 2, ',', '.');
     return $valor;
 }
-
-//chamando a função
-$valorFormatado = mascaraDinheiro($valor);
 ?>
 
 <!DOCTYPE html>
