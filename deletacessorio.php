@@ -1,9 +1,7 @@
 <?php
 
 include_once("conecta.php");
-$id = $_GET['editar'];
-$sql = "SELECT * FROM acessorio WHERE id=" . $id;
-
+$id= $_GET= 'deletar';
 $resultado = mysqli_query($conexao, $sql);
 $dados = mysqli_fetch_assoc($resultado);
 
@@ -24,15 +22,14 @@ if (isset($_GET['deletar'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Editar</title>
+    <title>Excluir</title>
 </head>
 
 <body>
     <div class="container">
-        <h1> Editar Acessorios </h1>
+        <h1> Excluir Acessorios </h1>
         <hr>
         <div class="row">
-            <form action="processa_acessorio.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $id; ?>" />
 
                 <div class="form-group">
@@ -46,7 +43,7 @@ if (isset($_GET['deletar'])) {
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit" name="editar"> Editar </button>
+                    <button class="btn btn-primary" type="submit" name="editar"> Excluir </button>
                 </div>
 
             </form>
@@ -56,7 +53,6 @@ if (isset($_GET['deletar'])) {
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="processa_acessorio.php">Acessorios</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Salvar edição</li>
                 <li class="breadcrumb-item"><a href="index.php">Voltar a página inícial</a></li>
             </ol>
         </nav>
