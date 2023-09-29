@@ -8,15 +8,17 @@
     <title>Cadastrar Livro</title>
 </head>
 <body>
-    <header class="bg-dark pb-2">
-        <div class="container p-3 mb-3 border-bottom">
-            <ul class="nav aling-items-center">
-                <li class="nav-item"><img src="./assets/logo.png"></li>
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="index.php">Lista de Produtos</a></li>
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_livro.php">Cadastrar Livro</a></li>
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_acessorio.php">Cadastrar Acessório</a></li>
-            </ul>
-        </div>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark pb-2">
+            <div class="container border-bottom p-1 mb-2">
+                <img src="./assets/logo.png" class="navbar-brand me-3" width="50" height="auto">
+                <ul class="navbar-nav text-end">
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="index.php">Lista de Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_livro.php">Cadastrar Livro</a></li>
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_acessorios.php">Cadastrar Acessório</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main class="container pt-3">
         <div class="row">

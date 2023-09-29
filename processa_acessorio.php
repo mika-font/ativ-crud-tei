@@ -8,12 +8,16 @@ if(isset($_POST['cadastrar'])){
     $valor = $_POST['valor'];
     $imagem = $_FILES['imagem'];
 
-    $sql = "INSERT INTO acessorio (nome, descricao, valor, imagem)VALUE ('$nome', '$descricao', '$valor','$imagem')";
+    $sql = "INSERT INTO acessorio (nome, descricao, valor, imagem) VALUE ('$nome', '$descricao', '$valor','$imagem')";
     $resultado = mysqli_query($conexao, $sql);
     if($resultado == true){
         header("Location: index.php?msg=1");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     }
+} else if (isset($_POST['editar'])){
+
+} else if (isset($_POST['deletar'])){
+    
 }
 ?>
