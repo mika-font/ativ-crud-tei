@@ -72,7 +72,7 @@ $dados = mysqli_fetch_assoc($resultado);
             </div>
             <div class="row">
                 <div class="p-2 text-end">
-                    <button class="btn btn-primary" type="submit" name="cadastrar">Cadastrar</button>
+                    <button class="btn btn-primary" type="submit" name="editar">Editar</button>
                 </div>
             </div>
         </form>

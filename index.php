@@ -144,6 +144,8 @@ function mascaraDinheiro($valor) {
             while ($acessorios = mysqli_fetch_assoc($resultado)) :
                 $texto = $acessorios['descricao'];
                 $descricao = recortarText($texto);
+                $valor = $acessorios['valor'];
+                $valorFormatado = mascaraDinheiro($valor);
                 $count++;
             ?>
                 <div class="col-xl-3">
@@ -152,7 +154,7 @@ function mascaraDinheiro($valor) {
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $acessorios['nome']; ?></h5>
                             <p class="card-text"><?php echo $descricao . '...'; ?></p>
-                            <p class="card-text"><?php echo $acessorios['valor']; ?></p>
+                            <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
                         <div class="card-footer text-center p-2">
                             <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar_acessorio">Visualizar</button>
