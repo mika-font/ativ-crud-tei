@@ -73,21 +73,38 @@ function recortarText($texto)
                             <h5 class="card-title"><?php echo $livros['titulo']; ?></h5>
                             <h6 class="card-text"><?php echo $livros['autor']; ?></h6>
                             <p class="card-text"><?php echo $sinopse . '...'; ?></p>
-                            <p class="card-text"><?php echo $livros['valor']; ?></p>
+                            <p class="card-text"><?php echo "R$ " . $livros['valor']; ?></p>
                         </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link btn btn-outline-info text-light">Visualizar</a>
-                            <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro'];?>" class="card-link btn btn-outline-sucesses text-light">Editar</a>
-                            <a href="processa_livro.php?deletar=<?php echo $livros['id_livro'];?>" class="card-link btn btn-outline-danger text-light">Excluir</a>
+                        <div class="card-footer text-center p-2">
+                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Visualizar</button>
+                            <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro']; ?>" class="card-link btn btn-outline-success text-light">Editar</a>
+                            <a href="processa_livro.php?deletar=<?php echo $livros['id_livro']; ?>" class="card-link btn btn-outline-danger text-light">Excluir</a>
                         </div>
                     </div>
                 </div>
-                <? if ($count == $limit) :
-                    echo '<div class="py-3"></div>';
-                    echo '</div>';
-                    echo '<div class="row">';
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel"><?php echo $livros['titulo'] ?></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><b><?php echo $livros['autor']; ?></b></p>
+                                <p><?php echo $livros['sinopse'];?></p>
+                                <img src="<?php echo $livros['imagem'];?>" class="card-img object-fit-cover" height="100%">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php if ($count == $limit) {
+                    echo '<div class="py-3"></div>' . '</div>' . '<div class="row">';
                     $count = 0;
-                endif ?>
+                } ?>
             <?php endwhile; ?>
         </div>
         <hr>
@@ -116,7 +133,7 @@ function recortarText($texto)
                             <p class="card-text"><?php echo $acessorios['valor']; ?></p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="card-link btn btn-outline-info text-light">Visualizar</a>
+                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Visualizar</button>
                         </div>
                     </div>
                 </div>
