@@ -14,10 +14,5 @@ if(isset($_POST['cadastrar'])){
         header("Location: index.php?msg=1");
     } else {
         echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
-    }
-} else if (isset($_POST['editar'])){
-
-} else if (isset($_POST['deletar'])){
-    
 }
 ?>
