@@ -27,8 +27,7 @@ function recortarText($texto)
 =======
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
-    <title>Livraria MilkShakespeare</title>
->>>>>>> 6a8106c019fd9b3f4fbd1a9030eb17bf4f0bf68f
+    <title>Livros</title>
 </head>
 
 <body>
@@ -44,91 +43,8 @@ function recortarText($texto)
             </div>
         </nav>
     </header>
-    <main class="container pt-3">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="text-center">
-                    <h1>Catálogo da MilkShakespeare</h1>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="text-center">
-                    <h3>Livros</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <?php
-            $limit = 4;
-            $count = 0;
-            while ($livros = mysqli_fetch_assoc($res)) :
-                $texto = $livros['sinopse'];
-                $sinopse = recortarText($texto);
-                $count++;
-            ?>
-                <div class="col-xl-3">
-                    <div class="card me-2 bg-dark text-bg-dark h-100">
-                        <img src="<?php echo $livros['imagem']; ?>" class="card-img object-fit-cover" height="100%">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $livros['titulo']; ?></h5>
-                            <h6 class="card-text"><?php echo $livros['autor']; ?></h6>
-                            <p class="card-text"><?php echo $sinopse . '...'; ?></p>
-                            <p class="card-text"><?php echo $livros['valor']; ?></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link btn btn-outline-info text-light">Visualizar</a>
-                        </div>
-                    </div>
-                </div>
-                <? if ($count == $limit) :
-                    echo '<div class="py-3"></div>';
-                    echo '</div>';
-                    echo '<div class="row">';
-                    $count = 0;
-                endif ?>
-            <?php endwhile; ?>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="text-center">
-                    <h3>Acessórios</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <?php
-            $limit = 4;
-            $count = 0;
-            while ($acessorios = mysqli_fetch_assoc($resultado)) :
-                $texto = $acessorios['descricao'];
-                $descricao = recortarText($texto);
-                $count++;
-            ?>
-                <div class="col-xl-3">
-                    <div class="card me-2 bg-dark text-bg-dark h-100">
-                        <img src="<?php echo $acessorios['imagem']; ?>" class="card-img object-fit-cover" height="100%">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $acessorios['nome']; ?></h5>
-                            <p class="card-text"><?php echo $descricao . '...'; ?></p>
-                            <p class="card-text"><?php echo $acessorios['valor']; ?></p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="card-link btn btn-outline-info text-light">Visualizar</a>
-                        </div>
-                    </div>
-                </div>
-                <? if ($count == $limit) :
-                    echo '<div class="py-3"></div>';
-                    echo '</div>';
-                    echo '<div class="row">';
-                    $count = 0;
-                endif ?>
-            <?php endwhile; ?>
-        </div>
+    <main>
+
     </main>
     <footer class="py-3 my-3 bg-dark text-light">
         <div class="container">
@@ -141,23 +57,22 @@ function recortarText($texto)
             <p class="text-center text-light">Instituto Federal Farroupilha - Campus Avançado Uruguaiana</p>
         </div>
     </footer>
-<<<<<<< HEAD
     <h1>Nossos Livros</h1>
     <a href="livros.php">Livros disponiveis</a>
     <a href="autores.php">Autores recomendados</a>
     <a href="cad_livro.php">Cadastrar</a>
+<<<<<<< HEAD
 
     <h2>Acessorios da nossa loja<h2>
-        <a href="cad_acessorios.php">Acessorios disponiveis</a>
-
+        <a href="acessorios.php">Acessorios disponiveis</a>
+=======
+>>>>>>> 7504cb434b716a4d13bea2b194d6d14eb319b59a
     <table>
         <tr>
             <th>Livros</th>
             <th>Autor</th>
         </tr>
     </table>
-=======
->>>>>>> 6a8106c019fd9b3f4fbd1a9030eb17bf4f0bf68f
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
