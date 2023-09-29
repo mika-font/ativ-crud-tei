@@ -14,6 +14,14 @@ function recortarText($texto)
     $sinopse = implode(' ', $recorte);
     return $sinopse;
 }
+//função para a variavel $valor ser exibida com , e R$
+function mascaraDinheiro($valor) {
+    $valor = number_format($valor, 2, ',', '.');
+    return 'R$ ' . $valor;
+}
+
+//chamando a função
+$valorFormatado = mascaraDinheiro($valor);
 ?>
 
 <!DOCTYPE html>
