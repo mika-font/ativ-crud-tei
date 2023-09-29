@@ -8,14 +8,17 @@
     <title>Cadastrar Livro</title>
 </head>
 <body>
-    <header class="bg-dark pb-2">
-        <div class="container p-3 mb-3 border-bottom">
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="index.php">Lista de Produtos</a></li>
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_livro.php">Cadastrar Livro</a></li>
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_acessorio.php">Cadastrar Acessório</a></li>
-            </ul>
-        </div>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark pb-2">
+            <div class="container border-bottom p-1 mb-2">
+                <img src="./assets/logo.png" class="navbar-brand me-3" width="50" height="auto">
+                <ul class="navbar-nav text-end">
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="index.php">Lista de Produtos</a></li>
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_livro.php">Cadastrar Livro</a></li>
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2 text-light" href="cad_acessorios.php">Cadastrar Acessório</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main class="container pt-3">
         <div class="row">
@@ -28,33 +31,33 @@
         </div>
         <form action="processa_livro.php" method="POST" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-6 pb-2">
                     <label class="form-label">Título</label>
                     <input class="form-control" type="text" name="titulo" required>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-6 pb-2">
                     <label class="form-label">Autor(es)</label>
                     <input class="form-control" type="text" name="autor" required>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-12 pb-2">
                     <label class="form-label">Sinopse</label>
                     <textarea class="form-control" name="sinopse" id="texto" cols="100" rows="30" required></textarea>
                 </div>  
             </div>
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-6 pb-2">
                     <label class="form-label">Valor</label>
-                    <input class="form-control" type="number" name="valor" required>
+                    <input class="form-control" type="text" name="valor" required>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-6 pb-2">
                     <label class="form-label">Gênero</label>
                     <input class="form-control" type="text" name="genero" required>
                 </div>
             </div>
             <div class="row">   
-                <div class="col-xl-12">
+                <div class="col-xl-12 pb-2">
                     <label class="form-label">Imagem</label>
                     <input class="form-control" type="file" name="imagem" required>
                 </div>
