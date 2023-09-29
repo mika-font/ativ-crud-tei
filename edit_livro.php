@@ -20,8 +20,54 @@
             </div>
         </nav>
     </header>
-    <main>
-
+    <main class="container pt-3">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="text-center">
+                    <h1>Editar Livro</h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <form action="processa_livro.php" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-xl-6 pb-2">
+                    <label class="form-label">Título</label>
+                    <input class="form-control" type="text" name="titulo" required>
+                </div>
+                <div class="col-xl-6 pb-2">
+                    <label class="form-label">Autor(es)</label>
+                    <input class="form-control" type="text" name="autor" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 pb-2">
+                    <label class="form-label">Sinopse</label>
+                    <textarea class="form-control" name="sinopse" id="texto" cols="100" rows="30" required></textarea>
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-xl-6 pb-2">
+                    <label class="form-label">Valor</label>
+                    <input class="form-control" type="text" name="valor" required>
+                </div>
+                <div class="col-xl-6 pb-2">
+                    <label class="form-label">Gênero</label>
+                    <input class="form-control" type="text" name="genero" required>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col-xl-12 pb-2">
+                    <label class="form-label">Imagem</label>
+                    <input class="form-control" type="file" name="imagem" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="p-2">
+                    <button class="btn btn-primary" type="submit" name="cadastrar">Cadastrar</button>
+                </div>
+            </div>
+        </form>
     </main>
     <footer>
 
