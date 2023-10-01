@@ -6,7 +6,6 @@ function conectar(){
     $bd="livrostore";
     $conexao = mysqli_connect($bdserv, $bdusu, $bdsenha, $bd);
     
-    
     if($conexao){
         return $conexao;
     } else {

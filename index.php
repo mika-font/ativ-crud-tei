@@ -33,6 +33,11 @@ function mascaraDinheiro($valor)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
     <title>Livraria MilkShakespeare</title>
+    <style>
+        .text_just{
+            text-align: justify;
+        }
+    </style>
 </head>
 
 <body>
@@ -50,23 +55,7 @@ function mascaraDinheiro($valor)
     </header>
     <?php
     if (isset($_GET['msg']) && $_GET['msg'] == 1) { ?>
-        <div class="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     <?php } ?>
     <main class="container pt-3">
         <div class="row">
@@ -101,13 +90,13 @@ function mascaraDinheiro($valor)
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $livros['titulo']; ?></h5>
                             <h6 class="card-text"><?php echo $livros['autor']; ?></h6>
-                            <p class="card-text"><?php echo $sinopse . '...'; ?></p>
+                            <p class="card-text text_just"><?php echo $sinopse . '...'; ?></p>
                             <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
-                        <div class="card-footer text-center p-2">
-                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar<?php echo $livros['id_livro'] ?>">Visualizar</button>
-                            <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro']; ?>" class="card-link btn btn-outline-success text-light">Editar</a>
-                            <button type="button" class="card-link btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarLivro<?php echo $livros['id_livro']; ?>">Excluir</button>
+                        <div class="card-footer text-center">
+                            <button type="button" class="card-link m-2 btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar<?php echo $livros['id_livro'] ?>">Visualizar</button>
+                            <a href="edit_livro.php?id_livro=<?php echo $livros['id_livro']; ?>" class="card-link m-2 btn btn-outline-success text-light">Editar</a>
+                            <button type="button" class="card-link m-2 btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarLivro<?php echo $livros['id_livro']; ?>">Excluir</button>
                         </div>
                     </div>
                 </div>
@@ -177,13 +166,13 @@ function mascaraDinheiro($valor)
                         <img src="<?php echo $acessorios['imagem']; ?>" class="card-img object-fit-cover" height="100%">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $acessorios['nome']; ?></h5>
-                            <p class="card-text"><?php echo $descricao . '...'; ?></p>
+                            <p class="card-text text_just"><?php echo $descricao . '...'; ?></p>
                             <p class="card-text"><?php echo "R$ " . $valorFormatado; ?></p>
                         </div>
-                        <div class="card-footer text-center p-2">
-                            <button type="button" class="card-link btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar_acessorio<?php echo $acessorios['id_acessorio'] ?>">Visualizar</button>
-                            <a href="edit_acessorio.php?id_acessorio=<?php echo $acessorios['id_acessorio']; ?>" class="card-link btn btn-outline-success text-light">Editar</a>
-                            <button type="button" class="card-link btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarAcessorio<?php echo $acessorios['id_acessorio']; ?>">Excluir</button>
+                        <div class="card-footer text-center">
+                            <button type="button" class="card-link m-2 btn btn-outline-info text-light" data-bs-toggle="modal" data-bs-target="#visualizar_acessorio<?php echo $acessorios['id_acessorio'] ?>">Visualizar</button>
+                            <a href="edit_acessorio.php?id_acessorio=<?php echo $acessorios['id_acessorio']; ?>" class="card-link m-2 btn btn-outline-success text-light">Editar</a>
+                            <button type="button" class="card-link m-2 btn btn-outline-danger text-light" data-bs-toggle="modal" data-bs-target="#confirmarAcessorio<?php echo $acessorios['id_acessorio']; ?>">Excluir</button>
                         </div>
                     </div>
                 </div>
@@ -242,6 +231,7 @@ function mascaraDinheiro($valor)
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
